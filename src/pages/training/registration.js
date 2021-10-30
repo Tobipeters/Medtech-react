@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/nav";
 import Footer from "../../components/footer";
 import db from "../../config/firebase";
@@ -31,10 +31,17 @@ const Register = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, [])
+
+  // const scrollUp = () => 
+  // scrollUp();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const goHome = () =>  history.push('/')
+  const goHome = () => history.push("/");
 
   return (
     <>
@@ -54,7 +61,9 @@ const Register = () => {
                 Your registration was successful!
               </h3>
               <p className="fs-6 fw-600">We'll get back to you</p>
-              <button className="btn btn-primary" onClick={goHome}>Go home</button>
+              <button className="btn btn-primary" onClick={goHome}>
+                Go home
+              </button>
             </div>
           </Modal.Body>
         </Modal>

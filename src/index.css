@@ -144,7 +144,8 @@ section {
 
 .stripe-1,
 .stripe-2 {
-  clip-path: polygon(100% 0%, 57% 48%, 100% 100%, 45% 100%, 0% 50%, 45% 0);
+  -webkit-clip-path: polygon(100% 0%, 57% 48%, 100% 100%, 45% 100%, 0% 50%, 45% 0);
+          clip-path: polygon(100% 0%, 57% 48%, 100% 100%, 45% 100%, 0% 50%, 45% 0);
   width: 50px;
   margin-right: -0.6rem;
 }
@@ -159,7 +160,8 @@ section {
 
 .stripe-3 {
   background: rgba(0, 172, 226, 0.85);
-  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 50%);
+  -webkit-clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 50%);
+          clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 50%);
   width: 110px;
 }
 
@@ -678,16 +680,17 @@ section {
   /* background-position: center; */
   height: 100%;
   width: 100%;
-  min-height: 500px;
+  min-height: 800px;
 }
 .article-img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
   height: auto;
 }
 @media screen and (max-width: 992px) {
   .training-banner {
-    min-height: 350px;
+    min-height: 600px;
   }
   .article-img {
     width: 100%;
@@ -695,7 +698,7 @@ section {
 }
 @media screen and (max-width: 767px) {
   .training-banner {
-    min-height: 150px;
+    min-height: 450px;
   }
   /* .article-img {
     width: 350px;

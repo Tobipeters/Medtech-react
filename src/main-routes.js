@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import ArticleView from "./pages/article-view";
 import CreateArticle from "./pages/create-article";
 import Register from "./pages/training/registration";
+import TraineeList from "./pages/training/trainee-list";
 
 const MainRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const MainRoutes = () => {
           <Route exact path="/article/:title" component={ArticleView} />
           <Route exact path="/manage-article" component={CreateArticle} />
           <Route exact path="/training-registeration" component={Register} />
+          <Route exact path="/trainee-list" component={TraineeList} />
         </Switch>
       </Fragment>
     </Router>

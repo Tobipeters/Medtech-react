@@ -7,7 +7,7 @@ import db from "../../config/firebase";
 import { onSnapshot, collection, addDoc } from "@firebase/firestore";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import trainingBannerImg from "../../assets/training-banner-1.jpeg";
+import trainingBannerImg from "../../assets/training-redesigned.jpeg";
 
 const Home = () => {
   const history = useHistory();

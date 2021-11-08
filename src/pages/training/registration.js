@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/nav";
+import AppNav from "../../components/nav";
 import Footer from "../../components/footer";
 import db from "../../config/firebase";
 import { onSnapshot, collection, addDoc } from "@firebase/firestore";
@@ -45,7 +45,7 @@ const Register = () => {
 
   return (
     <>
-      <Navbar />
+      <AppNav />
       <div className="container py-5">
         <Modal
           show={show}
@@ -229,8 +229,15 @@ const Register = () => {
                       <small className="fw-500 text-danger">{errors.sex}</small>
                     </div>
                     <div className="form-group col-md-6 mb-3">
-                      <label className="form-label">Qualification</label>
-                      <select
+                      <label className="form-label">Qualification (Attendee's Major Qualifications)</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="qualification"
+                        value={values.qualification}
+                        onChange={(e) => handleChange(e)}
+                      />
+                      {/* <select
                         className="form-control"
                         name="qualification"
                         value={values.qualification}
@@ -248,7 +255,7 @@ const Register = () => {
                         <option value="ba">BA</option>
                         <option value="msc">MSc</option>
                         <option value="phd">PhD</option>
-                      </select>
+                      </select> */}
                       <small className="fw-500 text-danger">
                         {errors.qualification}
                       </small>

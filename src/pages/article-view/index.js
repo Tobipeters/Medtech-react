@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import Navbar from "../../components/nav";
+import AppNav from "../../components/nav";
 import Footer from "../../components/footer";
 import db from "../../config/firebase";
 import { onSnapshot, collection, addDoc } from "@firebase/firestore";
@@ -34,7 +34,7 @@ const ArticleView = () => {
 
   return (
     <>
-      <Navbar />
+      <AppNav />
       {loading ? (
         <Loader />
       ) : (
@@ -42,12 +42,12 @@ const ArticleView = () => {
           <section className="">
             <div className="container pt-4 pb-5 px-3" data-aos="fade-up">
               <div className="section-details">
-                <h3 className="fs-2 fw-700 mb-3">{article[0]?.title}</h3>
+                <h3 className="fs-2 fw-700 mb-3" title={article[0]?.title}>{article[0]?.title}</h3>
                 <img
                   data-aos="zoom-in-up"
                   src={article[0]?.img}
                   className="article-img"
-                  alt="..."
+                  alt="article_img"
                 />
 
                 <div

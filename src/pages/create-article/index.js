@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 // import "react-quill/dist/quill.snow.css";
-import Navbar from "../../components/nav";
+import AppNav from "../../components/nav";
 import Footer from "../../components/footer";
 import db from "../../config/firebase";
 import { onSnapshot, collection, addDoc } from "@firebase/firestore";
@@ -42,7 +42,7 @@ const CreateArticle = () => {
 
   return (
     <>
-      <Navbar />
+      <AppNav />
       {loading ? (
         <Loader />
       ) : (

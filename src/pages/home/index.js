@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/nav";
+import AppNav from "../../components/nav";
 import Footer from "../../components/footer";
 import MedtechLogo from "../../assets/images/MedTech_Logo_complete.png";
 import CareboxLogo from "../../assets/images/CareBox_logo.png";
@@ -8,6 +8,8 @@ import { onSnapshot, collection, addDoc } from "@firebase/firestore";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import trainingBannerImg from "../../assets/training-redesigned.jpeg";
+import currentTrainingImg from "../../assets/dec-training.jpg"
+// import {FiChevronsRight} from
 
 const Home = () => {
   const history = useHistory();
@@ -17,6 +19,10 @@ const Home = () => {
 
   const trainingBanner = {
     backgroundImage: `url(${trainingBannerImg})`,
+  };
+
+  const currentTrainingBanner = {
+    backgroundImage: `url(${currentTrainingImg})`,
   };
 
   useEffect(() => {
@@ -33,7 +39,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      <AppNav />
       {/* Header section */}
       <header className="header-banner">
         <div className="layer"></div>
@@ -232,6 +238,10 @@ const Home = () => {
             Our <span className="fw-700">Services</span>
           </h3>
           <div className="mt-3">
+            <div className="ms-auto d-block d-md-none ">
+              <i class="fas fa-chevron-right fs-5"></i>
+              <i class="fas fa-chevron-right fs-5"></i>
+            </div>
             <nav>
               <div className="nav nav-tabs" id="nav-tab" role="tablist">
                 <button
@@ -309,7 +319,7 @@ const Home = () => {
                 >
                   <p className="mb-3">
                     We design and implement
-                    <span className="text_blue fw-600">strategies </span> to
+                    <span className="text_blue fw-600"> strategies </span> to
                     support entrepreneurs and organisations to create and
                     sustain value for their business. We collaborate with
                     business owners and managers, drawing on our diverse
@@ -476,7 +486,10 @@ const Home = () => {
                   <ul className="list-group strategy-list">
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Financial statement audits</span>
+                      <span className="fw-600">
+                        {" "}
+                        Financial statement audits
+                      </span>
                       <span>
                         give assurance over the completeness and accuracy of
                         financial reports and information relied upon by
@@ -486,7 +499,7 @@ const Home = () => {
                     </li>
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Internal Audit </span>
+                      <span className="fw-600"> Internal Audit </span>
                       <span>
                         provides assurance over the effectiveness of internal
                         control instituted by management and helps to implement
@@ -496,7 +509,7 @@ const Home = () => {
                     </li>
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Risk management services</span>
+                      <span className="fw-600"> Risk management services</span>
                       <span>
                         help companies stay on track and mitigate risks that
                         could derange their business survival.
@@ -504,7 +517,7 @@ const Home = () => {
                     </li>
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Compliance services</span>
+                      <span className="fw-600"> Compliance services</span>
                       <span>
                         ensures business adherence to ongoing regulations, tax
                         provisions and statutory returns.
@@ -512,7 +525,7 @@ const Home = () => {
                     </li>
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Due diligence</span>
+                      <span className="fw-600"> Due diligence</span>
                       <span>
                         helps investors and third parties to mitigate risks,
                         identify contingent liabilities and problematic areas in
@@ -521,7 +534,7 @@ const Home = () => {
                     </li>
                     <li className="list-group-item border-0 bg-transparent ps-0 py-2">
                       <i className="me-1 text_purple fas fa-check"></i>
-                      <span className="fw-600">Revenue Assurance</span>
+                      <span className="fw-600"> Revenue Assurance</span>
                       <span>
                         provides confidence on the completeness and accuracy of
                         a business revenue and sales figures.
@@ -612,12 +625,13 @@ const Home = () => {
             <div className="position-relative my-4">
               <p className="">
                 <span className="d-inline text_blue fw-600">
-                  Care<span className="text_pink">box</span>
+                  Care<span className="text_pink">box </span>
                 </span>
                 is our subscription based comprehensive service offering that
                 supports hospitals and healthcare service providers. The
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  {" "}
+                  care<span className="text_pink">box </span>
                 </span>
                 subscription gives the hospital free access to select Medtech
                 services including management strategy, financial audit and
@@ -627,7 +641,8 @@ const Home = () => {
                 finance, procurement, internal audit and other administrative
                 roles. The
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  {" "}
+                  care<span className="text_pink">box </span>
                 </span>
                 service package also includes process automation and IT
                 solutions for hospitals with an easy-to-use Hospital Management
@@ -636,7 +651,8 @@ const Home = () => {
               </p>
               <p className="">
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  {" "}
+                  care<span className="text_pink">box </span>
                 </span>
                 takes care of all management, reporting, compliance,
                 administration and supervision functions of the hospital and
@@ -646,8 +662,9 @@ const Home = () => {
                 clinical outcomes.
               </p>
               <p className="">
+                {" "}
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  care<span className="text_pink">box </span>
                 </span>
                 takes care of all management, reporting, compliance,
                 administration and supervision functions of the hospital and
@@ -660,7 +677,8 @@ const Home = () => {
                 financial records, implement adequate control and compliance
                 systems. The
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  {" "}
+                  care<span className="text_pink">box </span>
                 </span>
                 partnership will enable you to mine every bit of meaning from
                 the financial reports of your hospital, employ financial
@@ -674,7 +692,8 @@ const Home = () => {
                 investments, clinical quality, and health systems strengthening
                 . Our professionals provide needed support to
                 <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box</span>
+                  {" "}
+                  care<span className="text_pink">box </span>
                 </span>
                 subscribers helping to scale operations, produce transparent
                 financial reports, implement strong control systems and
@@ -685,8 +704,10 @@ const Home = () => {
               {/* Carebox subscription details  */}
               <div className="mt-4">
                 <p className="fw-700 fs-5">
+                  {" "}
                   <span className="d-inline text_blue fw-600">
-                    Care<span className="text_pink">box</span>
+                    {" "}
+                    Care<span className="text_pink">box </span>
                   </span>
                   subscription details
                 </p>
@@ -701,22 +722,25 @@ const Home = () => {
                         <th scope="col">Subscription/Services</th>
                         <th scope="col">
                           <span className="d-inline text_blue fw-600">
+                            {" "}
                             care
-                            <span className="text_pink">box</span>
+                            <span className="text_pink">box </span>
                           </span>
                           Basic
                         </th>
                         <th scope="col">
                           <span className="d-inline text_blue fw-600">
+                            {" "}
                             care
-                            <span className="text_pink">box</span>
+                            <span className="text_pink">box </span>
                           </span>
                           Premium
                         </th>
                         <th scope="col">
                           <span className="d-inline text_blue fw-600">
+                            {" "}
                             care
-                            <span className="text_pink">box</span>
+                            <span className="text_pink">box </span>
                           </span>
                           Partner
                         </th>
@@ -1128,14 +1152,25 @@ const Home = () => {
           <h3 className="section-title fw-700 text_blue">Training</h3>
           <div className="row">
             <div className="col-12 mb-4">
-              <div className="card h-100 border-0 bg-transparent">
+              <div className=" bg-transparent">
                 <div className="training-banner" style={trainingBanner}></div>
+              </div>
+              <p className="fw-600 fs-6 fw-600 text-muted my-4">
+              Training registration slots filled 
+              </p>
+            </div>
+
+            <div className="col-12 mb-4">
+              <div className=" bg-transparent">
+                <div className="training-banner" style={currentTrainingBanner}></div>
               </div>
               <p className="fw-600 fs-6 text-dark my-4">
                 Click <Link to="/training-registeration">here</Link> to register
                 for the training
               </p>
             </div>
+            
+            
             {/* <div className="col-lg-4 col-md-5">
               <div className="card video-card mb-3">
                 <video className="w-100 h-100 vid" controls>
@@ -1185,7 +1220,7 @@ const Home = () => {
                       alt="..."
                     />
                     <div className="card-body">
-                      <h5 className="card-title fw-600">{article.title}</h5>
+                      <h5 className="card-title fw-600"> {article.title}</h5>
                       <p className="card-text">{article.preview}</p>
                       <a className="" onClick={() => onReadMore(article.title)}>
                         Read more
@@ -1207,7 +1242,7 @@ const Home = () => {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title fw-600">
+                  <h5 className="card-title fw-600"> 
                     How To best maintain your medical facility
                   </h5>
                   <p className="card-text">
@@ -1231,7 +1266,7 @@ const Home = () => {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title fw-600">
+                  <h5 className="card-title fw-600"> 
                     How To best maintain your medical facility
                   </h5>
                   <p className="card-text">

@@ -735,8 +735,10 @@ span {
 
 /* Sliding nav */
 
-.animate_nav{
-  transition: .6s all ease-in;
+#brand-toggle-holder,
+.animate_nav,
+#navbarSupportedContent {
+  transition: all 0.4s ease-in-out;
 }
 
 /* .navbar-collapse {

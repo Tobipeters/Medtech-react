@@ -8,12 +8,15 @@ import { Navbar, Nav } from "react-bootstrap";
 const AppNav = () => {
   const stickyNav = () => {
     let brandDiv = document.getElementById("brand-toggle-holder");
+    let stripes = document.getElementById('stripes')
     let heightScrolled =
       document.documentElement.scrollTop || document.body.scrollTop;
     // console.log(heightScrolled);
     if (heightScrolled > 50) {
-      brandDiv.style.cssText = "opacity:0 !important";
       brandDiv.style.cssText = "display:none !important";
+      // brandDiv.style.cssText = "opacity:0 !important";
+      // brandDiv.style.cssText = "height:0px !important";
+      // stripes.style.cssText = "height: 0px"
     }
      else {
       brandDiv.style.cssText = "display:flex !important";
@@ -47,7 +50,7 @@ const AppNav = () => {
             <Link className="navbar-brand" to="/">
               <img src={MedtechLogo} className="logo-img" alt="Medtech_logo" />
             </Link>
-            <div className="stripe-container">
+            <div className="stripe-container" id="stripes">
               <div className="stripe-1"></div>
               <div className="stripe-2"></div>
               <div className="stripe-3"></div>
@@ -72,6 +75,16 @@ const AppNav = () => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav align-items-center me-auto pb-3 pb-lg-0 mb-0">
+                <li className="nav-item">
+                    <HashLink
+                      smooth
+                      to="/#"
+                      className="nav-link"
+                      onClick={closeNavAfterLink}
+                    >
+                      Home
+                    </HashLink>
+                  </li>
                   <li className="nav-item">
                     <HashLink
                       smooth

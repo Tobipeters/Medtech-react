@@ -8,7 +8,7 @@ import { onSnapshot, collection, addDoc } from "@firebase/firestore";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import trainingBannerImg from "../../assets/training-redesigned.jpeg";
-import currentTrainingImg from "../../assets/dec-training.jpg"
+import currentTrainingImg from "../../assets/dec-training.jpg";
 // import {FiChevronsRight} from
 
 const Home = () => {
@@ -238,9 +238,11 @@ const Home = () => {
             Our <span className="fw-700">Services</span>
           </h3>
           <div className="mt-3">
-            <div className="ms-auto d-block d-md-none ">
-              <i class="fas fa-chevron-right fs-5"></i>
-              <i class="fas fa-chevron-right fs-5"></i>
+            <div className="d-flex justify-content-end d-md-none ">
+              <div>
+              <i class="fas fa-chevron-right fs-6 text-muted"></i>
+              <i class="fas fa-chevron-right fs-6 text-muted"></i>
+              </div>
             </div>
             <nav>
               <div className="nav nav-tabs" id="nav-tab" role="tablist">
@@ -652,7 +654,7 @@ const Home = () => {
               <p className="">
                 <span className="d-inline text_blue fw-600">
                   {" "}
-                  care<span className="text_pink">box </span>
+                Care<span className="text_pink">box </span>
                 </span>
                 takes care of all management, reporting, compliance,
                 administration and supervision functions of the hospital and
@@ -662,20 +664,10 @@ const Home = () => {
                 clinical outcomes.
               </p>
               <p className="">
-                {" "}
-                <span className="d-inline text_blue fw-600">
-                  care<span className="text_pink">box </span>
-                </span>
-                takes care of all management, reporting, compliance,
-                administration and supervision functions of the hospital and
-                support the Medical Director with strategic analysis and
-                recommendations, allowing the clinicians to face the core
-                practice of rendering quality medical services with good
-                clinical outcomes. An organization’s ability to survive and
-                achieve its goals ultimately depends on its capacity to remain
-                profitable, retain competent teams, produce transparent
-                financial records, implement adequate control and compliance
-                systems. The
+                An organization’s ability to survive and achieve its goals
+                ultimately depends on its capacity to remain profitable, retain
+                competent teams, produce transparent financial records,
+                implement adequate control and compliance systems. The
                 <span className="d-inline text_blue fw-600">
                   {" "}
                   care<span className="text_pink">box </span>
@@ -1156,21 +1148,23 @@ const Home = () => {
                 <div className="training-banner" style={trainingBanner}></div>
               </div>
               <p className="fw-600 fs-6 fw-600 text-muted my-4">
-              Training registration slots filled 
+                Training registration slots filled
               </p>
             </div>
 
             <div className="col-12 mb-4">
               <div className=" bg-transparent">
-                <div className="training-banner" style={currentTrainingBanner}></div>
+                <div
+                  className="training-banner"
+                  style={currentTrainingBanner}
+                ></div>
               </div>
               <p className="fw-600 fs-6 text-dark my-4">
                 Click <Link to="/training-registeration">here</Link> to register
                 for the training
               </p>
             </div>
-            
-            
+
             {/* <div className="col-lg-4 col-md-5">
               <div className="card video-card mb-3">
                 <video className="w-100 h-100 vid" controls>

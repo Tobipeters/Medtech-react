@@ -741,6 +741,20 @@ span {
   transition: all 0.4s ease-in-out;
 }
 
+.hide-logo-bar{
+  transform: translate3d(0px, -70px, 0px);
+}
+
+.animate_nav{
+  transform: translate3d(0px, -70px, 0px);
+}
+
+@media screen and (max-width:567px){
+  .animate_nav{
+    transform: translate3d(0px, -56px, 0px);
+  }
+}
+
 /* .navbar-collapse {
   transition: .5s all ease-in-out;
   position: absolute;

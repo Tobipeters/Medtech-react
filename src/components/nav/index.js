@@ -8,18 +8,22 @@ import { Navbar, Nav } from "react-bootstrap";
 const AppNav = () => {
   const stickyNav = () => {
     let brandDiv = document.getElementById("brand-toggle-holder");
-    let stripes = document.getElementById('stripes')
+    let mainMenu = document.getElementById("main-menu");
+    let stripes = document.getElementById("stripes");
     let heightScrolled =
       document.documentElement.scrollTop || document.body.scrollTop;
     // console.log(heightScrolled);
     if (heightScrolled > 50) {
-      brandDiv.style.cssText = "display:none !important";
-      // brandDiv.style.cssText = "opacity:0 !important";
+      brandDiv.classList.add("hide-logo-bar")
+      // brandDiv.style.cssText = "transform: translate3d(0px, -118px, 0px) !important";
+      // brandDiv.style.cssText = "display:none !important";
+      mainMenu.classList.add("animate_nav");
       // brandDiv.style.cssText = "height:0px !important";
       // stripes.style.cssText = "height: 0px"
-    }
-     else {
-      brandDiv.style.cssText = "display:flex !important";
+    } else {
+      // brandDiv.style.cssText = "display:flex !important";
+      brandDiv.classList.remove("hide-logo-bar")
+      mainMenu.classList.remove("animate_nav");
     }
   };
 
@@ -41,7 +45,7 @@ const AppNav = () => {
 
   return (
     <>
-      <nav className="navbar py-0 sticky-top navbar-expand-lg navbar-light shadow">
+      <nav className="navbar py-0 sticky-top navbar-expand-lg navbar-light">
         <div className="d-block w-100">
           <div
             className="container d-flex justify-content-between py-2"
@@ -57,7 +61,7 @@ const AppNav = () => {
             </div>
           </div>
 
-          <div className="bg-grey w-100 animate_nav">
+          <div className="bg-grey w-100 shadow" id="main-menu">
             <div className="container">
               <button
                 className="navbar-toggler collapsed"
@@ -75,7 +79,7 @@ const AppNav = () => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav align-items-center me-auto pb-3 pb-lg-0 mb-0">
-                <li className="nav-item">
+                  <li className="nav-item">
                     <HashLink
                       smooth
                       to="/#"
